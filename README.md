@@ -1,8 +1,34 @@
-🧠 Alzheimer’s Disease Feature Analysis & Machine Learning Models
+# 🧠 Alzheimer’s Disease Feature Analysis & Machine Learning Models
+An end-to-end machine learning project designed to analyze Alzheimer’s Disease datasets, perform feature selection, apply SMOTE for class balancing, and evaluate model performance across multiple train/test splits. The goal is to identify stable, clinically meaningful predictors of Alzheimer’s disease.
 
-This repository contains data, scripts, and model outputs for an end-to-end machine-learning analysis of Alzheimer’s disease. The project evaluates multiple feature-selection techniques, performs class balancing, and compares model performance across multiple train/test splits.
+## 📑 Table of Contents
+- [About](#about)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Tech Stack](#tech-stack)
+- [Screenshots](#screenshots)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
-📁 Repository Structure
+## 🔍 About
+This project analyzes Alzheimer’s disease using multiple machine learning techniques in R. It evaluates different feature-selection methods (LASSO, RFE, Random Forest), applies SMOTE to handle class imbalance, and compares model performance across multiple train/test splits (70/30, 75/25, 80/20).  
+The project is intended for data scientists, researchers, and clinicians exploring early-stage detection or interpretable predictive modeling.
+
+## ✨ Features
+- SMOTE-based class balancing  
+- Feature selection using LASSO, RFE, and Random Forest  
+- Random Forest modeling across multiple train/test splits  
+- Non-medical variable performance analysis  
+- Cross-split feature stability comparison  
+- Clear CSV outputs for all experiments  
+
+## 📁 Project Structure
+```
 cp/
 ├── alzheimers_disease_data.csv
 ├── balanced_alzheimers_data.csv
@@ -11,109 +37,71 @@ cp/
 ├── 80_20_original.csv
 ├── smote.R
 │
-├── importance/            # Feature importance results
-├── lasso/                 # LASSO regression outputs
-├── non-medical/           # Experiments using non-medical predictors only
-├── rf/                    # Random Forest models & comparisons
-├── rfe/                   # Recursive Feature Elimination outputs
-└── temp/                  # Intermediate/temporary files
+├── importance/
+├── lasso/
+├── non-medical/
+├── rf/
+├── rfe/
+└── temp/
+```
 
-🎯 Project Objectives
+## 🛠 Installation
+```bash
+git clone [https://github.com/your/repo.git](https://github.com/atharvadk/Alzheimer-s-disease-Prediction)
+cd repo
+```
 
-Identify the most predictive features for Alzheimer’s disease.
+Install required R packages:
+```r
+install.packages(c("tidyverse", "randomForest", "glmnet", "caret", "DMwR"))
+```
 
-Compare multiple feature-selection methods:
-
-Random Forest feature importance
-
-LASSO regression
-
-Recursive Feature Elimination (RFE)
-
-Evaluate model stability across multiple data splits (70/30, 75/25, 80/20).
-
-Assess predictive power of non-medical features.
-
-Address class imbalance using SMOTE.
-
-🔬 Workflow Overview
-1. Data Preparation
-
-Load the main Alzheimer’s dataset.
-
-Create multiple train/test splits.
-
-Apply SMOTE (optional) using smote.R.
-
-2. Feature Selection
-
-Feature-selection results are located in:
-
-importance/
-
-lasso/
-
-rfe/
-
-rf/ (RF-based ranking)
-
-Each folder contains CSV outputs and analysis artifacts.
-
-3. Model Training
-
-Random Forest models are trained across:
-
-Full feature set
-
-Selected features from LASSO / RFE / RF
-
-Non-medical-only subsets
-
-Performance comparisons for each split are stored inside rf/.
-
-4. Cross-Split Comparison
-
-To evaluate robustness, the results across all splits (70/30, 75/25, 80/20) are compared, identifying:
-
-Consistently selected features
-
-Stable importance rankings
-
-Features with strong predictive contribution
-
-📊 Included Data Files
-File	Description
-alzheimers_disease_data.csv	Raw Alzheimer’s dataset
-balanced_alzheimers_data.csv	SMOTE-balanced dataset
-XX_YY_original.csv	Train/test split datasets (70/30, 75/25, 80/20)
-🧪 Reproducing the Analysis
-Run SMOTE balancing
+## 🚀 Usage
+Run SMOTE balancing:
+```r
 source("smote.R")
+```
 
-Re-run feature-selection scripts
+Run feature-selection and modeling scripts:
+```r
+source("rf/run_rf_model.R")
+source("lasso/run_lasso.R")
+source("rfe/run_rfe.R")
+```
 
-Each folder (e.g., lasso/, rfe/) contains the specific R code and outputs needed.
+## ⚙️ Configuration
+Required R packages:
+```
+tidyverse
+randomForest
+glmnet
+caret
+DMwR
+```
 
-Review model results
+## 🧱 Tech Stack
+- **Language:** R  
+- **Models:** Random Forest, LASSO, RFE  
+- **Data Processing:** SMOTE, tidyverse  
+- **Outputs:** CSV, R scripts  
 
-Inside rf/ you will find:
+## 🖼 Screenshots
+_Add screenshots or visual outputs if needed._
 
-Feature importance tables
+## 🗺 Roadmap
+- [ ] Add unified end-to-end pipeline  
+- [ ] Add feature stability visualizations  
+- [ ] Add alternative models (XGBoost, Logistic Regression)  
+- [ ] Publish research report  
 
-Model performance metrics
+## 🤝 Contributing
+1. Fork the repo  
+2. Create a branch  
+3. Commit changes  
+4. Open a pull request  
 
-Cross-split comparison CSVs
+## 📄 License
+MIT or your preferred license.
 
-🚀 Future Enhancements
-
-Add unified R scripts for full pipeline reproducibility
-
-Add visualizations for cross-method feature importance
-
-Expand models (XGBoost, logistic regression, SVM)
-
-Convert findings into a research-ready PDF report
-
-📄 License
-
-This project is provided for research and educational purposes. Add your license information here if needed.
+## 🙌 Acknowledgements
+Thanks to Alzheimer’s research communities, data contributors, and the R open-source community.
