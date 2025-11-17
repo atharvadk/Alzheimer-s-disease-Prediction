@@ -12,7 +12,6 @@ An end-to-end machine learning project designed to analyze Alzheimer’s Disease
 - [Screenshots](#screenshots)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
-- [License](#license)
 - [Acknowledgements](#acknowledgements)
 
 ## 🔍 About
@@ -99,9 +98,6 @@ _Add screenshots or visual outputs if needed._
 2. Create a branch  
 3. Commit changes  
 4. Open a pull request  
-
-## 📄 License
-MIT or your preferred license.
 
 ## 🙌 Acknowledgements
 Thanks to Alzheimer’s research communities, data contributors, and the R open-source community.
